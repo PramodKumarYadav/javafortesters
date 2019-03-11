@@ -4,7 +4,9 @@ import com.javafortesters.domainentities.Print2DArray;
 import com.javafortesters.domainentities.User;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -352,6 +354,33 @@ public class ArraysTest {
         Print2DArray.print2DIntArray(arrayBase16) ;
 
     }
+
+
+public String findNumber(List<Integer> arr, int k) {
+    System.out.println(arr.size());
+    for (Integer i =0; i < arr.size() ; i ++){
+        if (k == arr.get(i)){
+            return "Yes";
+        }
+    }
+    return "No";
+
+}
+
+@Test
+    public void callFindNumber() {
+
+    List<Integer> integers = new ArrayList<>();
+    integers.add(1);
+    integers.add(2);
+    integers.add(3);
+
+    Integer itemToSearch = 2;
+
+    System.out.println(findNumber(integers,itemToSearch));
+
+}
+
 
 
 

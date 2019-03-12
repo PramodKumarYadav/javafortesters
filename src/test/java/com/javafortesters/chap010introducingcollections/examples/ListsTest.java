@@ -4,6 +4,7 @@ import com.javafortesters.domainentities.User;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -124,6 +125,11 @@ public class ListsTest {
     @Test
     public void setElementAtAnIndex() {
         List<String> days = new ArrayList<>();
+        List<String> splitWaliString = new ArrayList<>();
+        String sentenc = "my name is pramod kumar yadav";
+        splitWaliString = Arrays.asList(sentenc.split(" "));
+
+        System.out.println(splitWaliString);
 
         days.add("Monday");
         days.add("Friday");
@@ -175,5 +181,42 @@ public class ListsTest {
 
         users.remove(0) ;
         assertEquals(0,users.indexOf(user1));
+    }
+
+    @Test
+    public void longestEvenWord() {
+        // Write your code here
+        String sentence = "m nam i pramod kumar yadav vramo";
+        // First parse the sentence into a list of words
+        List<String> parsedSentenceList = new ArrayList<>();
+        parsedSentenceList = Arrays.asList(sentence.split(" "));
+
+        System.out.println(parsedSentenceList);
+
+        // Find the size of the first biggest word among list and the biggest word itself.
+        int lengthOfBiggestWord = 0;
+        String firstBiggestWord = "00";
+
+        for (int i=0 ; i < parsedSentenceList.size(); i++){
+
+            if (parsedSentenceList.get(i).length() %2 == 0){
+
+                if(parsedSentenceList.get(i).length() > lengthOfBiggestWord){
+                    lengthOfBiggestWord = parsedSentenceList.get(i).length();
+                    firstBiggestWord = parsedSentenceList.get(i);
+                }
+            }
+        }
+
+        System.out.println(lengthOfBiggestWord);
+        System.out.println(firstBiggestWord);
+
+//        if (lengthOfBiggestWord == 0){
+//            return "00";
+//        }
+//        else {
+//            return firstBiggestWord;
+//        }
+
     }
 }
